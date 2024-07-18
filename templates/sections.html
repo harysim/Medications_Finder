@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ gettext('List Medicines by Type') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ gettext('List Medicines by Type') }}</h1>
+    <ul>
+        {% for sheet_name in xls.sheet_names %}
+            <li>
+                <a href="{{ url_for('list_by_type', section=sheet_name) }}">{{ sheet_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">{{ gettext('Back to Search') }}</a>
+</body>
+</html>

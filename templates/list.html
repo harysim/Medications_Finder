@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ gettext('List of Medicines in') }} {{ section }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ gettext('List of Medicines in') }} {{ section }}</h1>
+    <ul>
+        {% for _, row in data.iterrows() %}
+            <li>
+                <div class="medicine-card">
+                    <p><strong>{{ gettext('Code') }}:</strong> {{ row['code'] }}</p>
+                    <p><strong>{{ gettext('Name') }}:</strong> {{ row['name'] }}</p>
+                    <p><strong>{{ gettext('Price') }}:</strong> {{ row['price'] }}</p>
+                    <p><strong>{{ gettext('Section') }}:</strong> {{ section }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('sections') }}">{{ gettext('Back to Sections') }}</a>
+</body>
+</html>
