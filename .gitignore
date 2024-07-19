@@ -3,3 +3,4 @@ __pycache__/
 .vscode/
 .venv/
 *.xlsx
+!medi_price_Fixed.xlsx
