@@ -265,11 +265,10 @@ p {
   padding: 5px 8px;
   word-wrap: break-word;
   white-space: normal;
-  min-width: 50px; /* Ensure columns have a minimum width */
-  max-width: 200px; /* Ensure columns have a maximum width */
+  min-width: 50px;
+  max-width: 200px;
 }
 
-/* Apply different width adjustments for mobile screens */
 @media (max-width: 480px) {
   .results-table th, .results-table td {
     min-width: 50px;

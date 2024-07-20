@@ -11,11 +11,13 @@
         .results-table-wrapper table {
             width: 100%;
         }
+
         .no-results-message {
             text-align: center;
             color: white;
             font-size: 1.5em;
         }
+
         .download-link {
             color: white;
             text-decoration: none;
@@ -99,7 +101,35 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Adjust the layout based on screen size
+        function adjustLayout() {
+            const searchWrapper = document.querySelector('.search-wrapper');
+            const searchInput = document.querySelector('.search-input');
+            const searchIcon = document.querySelector('.search-icon');
+            const downloadLink = document.querySelector('.download-link');
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth < 768) {
+                searchWrapper.style.marginTop = '-200px';
+                searchInput.style.width = '80%';
+                searchIcon.style.right = '10px';
+                searchIcon.style.width = '20px';
+                searchIcon.style.height = '20px';
+                downloadLink.style.fontSize = '14px';
+            } else {
+                searchWrapper.style.marginTop = '-370px';
+                searchInput.style.width = '450px';
+                searchIcon.style.right = '15px';
+                searchIcon.style.width = '30px';
+                searchIcon.style.height = '30px';
+                downloadLink.style.fontSize = '18px';
+            }
+        }
+
+        window.addEventListener('resize', adjustLayout);
+        document.addEventListener('DOMContentLoaded', adjustLayout);
+    </script>
 </body>
 
 </html>
-
